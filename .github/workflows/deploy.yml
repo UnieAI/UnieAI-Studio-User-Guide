@@ -120,7 +120,7 @@ jobs:
           
       - name: Build documentation
         run: |
-          mkdocs build --clean --site-dir ./site
+          mkdocs build --clean --site-dir site
           
       - name: Setup Pages
         uses: actions/configure-pages@v5
