@@ -77,7 +77,7 @@ API 金鑰是 UnieAI Studio 提供的安全認證機制：
 ### 📸 API 管理界面展示
 
 #### API 金鑰管理界面
-![API 金鑰管理界面](../images/api-element-1.png)  
+![API 金鑰管理界面](images/api-element-1.png)  
 *API 金鑰管理：創建和管理 API 存取權限*
 
 **界面說明**：
@@ -92,7 +92,7 @@ API 金鑰是 UnieAI Studio 提供的安全認證機制：
    - 複製和編輯功能
 
 #### API 管理頁面完整
-![API 管理頁面](../images/api-page-1.png)  
+![API 管理頁面](images/api-page-1.png)  
 *API 管理頁面：完整的金鑰管理功能*
 
 **功能特色**：

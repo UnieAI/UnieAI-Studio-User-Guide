@@ -141,7 +141,7 @@
 - **操作區域**: 部署按鈕
 
 #### B. 模型下拉選單
-![模型下拉選單](../images/deploy-form-model-dropdown-0.png)  
+![模型下拉選單](images/deploy-form-model-dropdown-0.png)  
 *模型下拉選單：35+ 個模型選項可用*
 
 **選項分析**：
@@ -151,7 +151,7 @@
 - **搜索功能**: 支援關鍵字搜索
 
 #### C. 已選擇模型
-![已選擇模型](../images/deploy-form-model-selected.png)  
+![已選擇模型](images/deploy-form-model-selected.png)  
 *已選擇 FinanceLLM (Beta)：確認模型選擇成功*
 
 **確認要素**：
@@ -505,11 +505,11 @@ Token 優化:
 ### 📸 部署流程截圖
 
 #### D. 準備部署
-![準備部署](../images/deploy-form-ready-to-deploy.png)  
+![準備部署](images/deploy-form-ready-to-deploy.png)  
 *準備部署：所有配置完成，等待確認*
 
 #### E. 完整填寫
-![完整填寫](../images/deploy-form-final-complete.png)  
+![完整填寫](images/deploy-form-final-complete.png)  
 *完整表單：最終填寫狀態確認*
 
 ---
