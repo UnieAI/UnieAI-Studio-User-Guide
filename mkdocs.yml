@@ -96,7 +96,7 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/UnieAI/UnieAI-Studio-User-Guide
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/unieai
+    - icon: fontawesome/brands/discord
+      link: https://discord.unieai.com
   version:
     provider: mike
