@@ -39,6 +39,7 @@ jobs:
           mkdir -p docs/images
           cp *.md docs/ 2>/dev/null || true
           cp -r images/* docs/images/ 2>/dev/null || true
+          echo "# This file tells GitHub Pages to not process this site with Jekyll." > docs/.nojekyll
           
       - name: Create index.md in docs
         run: |
