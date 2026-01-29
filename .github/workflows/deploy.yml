@@ -34,122 +34,9 @@ jobs:
         run: |
           pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin mkdocs-redirects
           
-      - name: Create mkdocs.yml
+      - name: Create index.md
         run: |
-          cat > mkdocs.yml << 'EOF'
-          site_name: UnieAI Studio 用戶指南
-          site_description: 零基礎到進階的完整 AI 開發平台教學手冊
-          site_author: DotDot Max
-          site_url: https://unieai.github.io/UnieAI-Studio-User-Guide/
-          
-          theme:
-            name: material
-            language: zh-TW
-            features:
-              - navigation.top
-              - navigation.sections
-              - navigation.expand
-              - navigation.indexes
-              - toc.integrate
-              - content.code.annotate
-              - content.code.copy
-              - content.code.select
-              - content.tabs.link
-              - content.tooltips
-              - header.autohide
-              - announce.dismiss
-              - search.highlight
-              - search.share
-              - search.suggest
-              - content.tabs
-              - content.expand
-            palette:
-              - scheme: default
-                primary: blue
-                accent: light blue
-                toggle:
-                  icon: material/brightness-7
-                  name: 切換到深色模式
-              - scheme: slate
-                primary: blue
-                accent: light blue
-                toggle:
-                  icon: material/brightness-4
-                  name: 切換到淺色模式
-            font:
-              text: 'Noto Sans TC'
-              code: 'JetBrains Mono'
-          
-          nav:
-            - 首頁: index.md
-            - 教學章節:
-              - 基礎登入與導航: 01-basics-login.md
-              - 模型探索與選擇: 02-model-exploration.md
-              - Playground 測試環境: 03-playground-intro.md
-              - 部署創建與管理: 04-deployment-creation.md
-              - API 金鑰管理: 05-api-keys-management.md
-          
-          plugins:
-            - search
-            - awesome-pages
-            - redirects:
-                redirect_maps:
-                  'README.md': 'index.md'
-                  '01-basics-login.md': '01-basics-login.md'
-                  '02-model-exploration.md': '02-model-exploration.md'
-                  '03-playground-intro.md': '03-playground-intro.md'
-                  '04-deployment-creation.md': '04-deployment-creation.md'
-                  '05-api-keys-management.md': '05-api-keys-management.md'
-          
-          markdown_extensions:
-            - pymdownx.highlight:
-                anchor_linenums: true
-                line_spans: __span
-                pygments_lang_class: true
-            - pymdownx.inlinehilite
-            - pymdownx.snippets
-            - pymdownx.superfences
-            - pymdownx.tabbed:
-                alternate_style: true
-                combine_header_slug: true
-                slugify: !!python/object/apply:pymdownx.slugs.slugify
-                  kwds:
-                    case: lower
-            - pymdownx.tasklist:
-                custom_checkbox: true
-            - pymdownx.details
-            - pymdownx.magiclink
-            - pymdownx.mark
-            - pymdownx.emoji:
-                emoji_index: !!python/name:material.extensions.emoji.twemoji
-                emoji_generator: !!python/name:material.extensions.emoji.to_svg
-            - admonition
-            - footnotes
-            - attr_list
-            - md_in_html
-            - toc:
-                permalink: true
-                title: On this page
-          
-          extra:
-            social:
-              - icon: fontawesome/brands/github
-                link: https://github.com/UnieAI/UnieAI-Studio-User-Guide
-              - icon: fontawesome/brands/twitter
-                link: https://twitter.com/unieai
-            version:
-              provider: mike
-          EOF
-          
-      - name: Copy images to docs
-        run: |
-          mkdir -p docs/images
-          cp -r images/* docs/images/ 2>/dev/null || true
-          cp *.md docs/ 2>/dev/null || true
-          
-      - name: Create index.md for homepage
-        run: |
-          cat > docs/index.md << 'EOF'
+          cat > index.md << 'EOF'
           # UnieAI Studio 用戶指南
 
           *零基礎到進階的完整 AI 開發平台教學手冊*
@@ -226,8 +113,7 @@ jobs:
           
       - name: Build documentation
         run: |
-          cd docs
-          mkdocs build --clean --strict
+          mkdocs build --clean --strict --site-dir site
           
       - name: Setup Pages
         uses: actions/configure-pages@v5
