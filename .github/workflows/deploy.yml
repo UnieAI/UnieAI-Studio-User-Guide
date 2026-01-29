@@ -34,9 +34,15 @@ jobs:
         run: |
           pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin mkdocs-redirects
           
-      - name: Create index.md
+      - name: Create docs directory and copy files
         run: |
-          cat > index.md << 'EOF'
+          mkdir -p docs/images
+          cp *.md docs/ 2>/dev/null || true
+          cp -r images/* docs/images/ 2>/dev/null || true
+          
+      - name: Create index.md in docs
+        run: |
+          cat > docs/index.md << 'EOF'
           # UnieAI Studio 用戶指南
 
           *零基礎到進階的完整 AI 開發平台教學手冊*
@@ -113,7 +119,7 @@ jobs:
           
       - name: Build documentation
         run: |
-          mkdocs build --clean --strict --site-dir site
+          mkdocs build --clean --strict
           
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -121,7 +127,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./docs/site
+          path: ./site
 
   # Deployment job
   deploy:

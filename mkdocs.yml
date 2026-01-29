@@ -2,6 +2,7 @@ site_name: UnieAI Studio 用戶指南
 site_description: 零基礎到進階的完整 AI 開發平台教學手冊
 site_author: DotDot Max
 site_url: https://unieai.github.io/UnieAI-Studio-User-Guide/
+docs_dir: docs
 
 theme:
   name: material
